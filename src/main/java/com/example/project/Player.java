@@ -20,6 +20,18 @@ public class Player{
     }
 
     public String playHand(ArrayList<Card> communityCards){      
+        for (Card c : communityCards) {
+            allCards.add(c);
+        }
+
+        for (Card c : hand) {
+            allCards.add(c);
+        }
+
+        allCards.sort(null);
+        System.out.print(allCards);
+
+
         return "Nothing";
     }
 
