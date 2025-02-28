@@ -16,7 +16,7 @@ public class Player{
     public ArrayList<Card> getAllCards(){return allCards;}
 
     public void addCard(Card c){
-        
+        hand.add(c);
     }
 
     public String playHand(ArrayList<Card> communityCards){      
@@ -35,9 +35,16 @@ public class Player{
         return "Nothing";
     }
 
-    public void sortAllCards(){} 
+    public void sortAllCards() {
+        allCards.sort((card1, card2) -> Utility.getRankValue(card1.getRank()) - Utility.getRankValue(card2.getRank()));
+    }
+    
+    
+    
+    
 
     public ArrayList<Integer> findRankingFrequency(){
+        
         return new ArrayList<>(); 
     }
 
