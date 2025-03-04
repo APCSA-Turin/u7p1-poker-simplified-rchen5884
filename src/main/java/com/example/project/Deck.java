@@ -2,36 +2,37 @@ package com.example.project;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Deck{
+public class Deck {
     private ArrayList<Card> cards;
 
-    public Deck(){
+    public Deck() {
         cards = new ArrayList<>();
         initializeDeck();
         shuffleDeck();
     }
 
-    public ArrayList<Card> getCards(){
+    public ArrayList<Card> getCards() {
         return cards;
     }
 
-    public void initializeDeck(){ //hint.. use the utility class
-        
+    public void initializeDeck() { // initializes the deck
+        for (String suit : Utility.getSuits()) {
+            for (String rank : Utility.getRanks()) {
+                cards.add(new Card(rank, suit));
+            }
+        }
     }
 
-    public void shuffleDeck(){ //You can use the Collections library or another method. You do not have to create your own shuffle algorithm
-        
+    public void shuffleDeck() { // uses the shuffle method in collections
+        Collections.shuffle(cards); 
     }
 
-    public  Card drawCard(){
-       return new Card("","");
+    public Card drawCard() {
+        // checks if isEmpty is true. If it is, returns null. Otherwise, removes and returns the first card from the list.
+        return (isEmpty()) ? null : cards.remove(0);
     }
 
-    public  boolean isEmpty(){
+    public boolean isEmpty() {
         return cards.isEmpty();
     }
-
-   
-
-
 }
