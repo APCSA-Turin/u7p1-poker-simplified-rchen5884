@@ -42,8 +42,6 @@ public class Player{
     }
 
     // self created "sort" method
-    
-
     public String playHand(ArrayList<Card> communityCards) {
         // clears allCards of any extra cards and adds both hand and communityCards to it
         allCards.clear();
@@ -51,10 +49,12 @@ public class Player{
         allCards.addAll(communityCards);
         ArrayList<Integer> suits = findSuitFrequency();
         ArrayList<Integer> ranks = findRankingFrequency();
+        // variables that will allow me to figure out flushes, straights, straight flushes, and royal flushes
         boolean flush = has(5, suits) || has(6, suits) || has(7, suits);
         boolean straight = false;
         boolean royal = false;
         int consecutiveNum = 0;
+
         // sorts allCards
         sortAllCards();
 
