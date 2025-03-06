@@ -103,7 +103,7 @@ public class Game {
             catch (InterruptedException e) {e.printStackTrace();}
 
             // asks the player if they want to play again
-            System.out.print("Play again? (yes/no): ");
+            System.out.print("Play again?: ");
             String input = scanner.nextLine().toLowerCase();
 
             // if they choose anything but yes, end game
