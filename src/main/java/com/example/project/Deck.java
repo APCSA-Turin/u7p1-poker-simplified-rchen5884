@@ -29,8 +29,10 @@ public class Deck {
 
     public Card drawCard() {
         // checks if isEmpty is true. If it is, returns null. Otherwise, removes and returns the first card from the list.
-        // ? is a shorthand way of a if statement
-        return (isEmpty()) ? null : cards.remove(0);
+        if (isEmpty()) {
+            return null;
+        }
+        return (cards.remove(0));
     }
 
     public boolean isEmpty() {
